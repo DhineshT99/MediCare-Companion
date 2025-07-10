@@ -7,6 +7,7 @@ import { ClockIcon } from "../icons/clock-icon";
 import { ImageIcon } from "../icons/img-icon";
 import { UserIcon } from "../icons/user-icon";
 import { useNavigate } from "react-router-dom";
+import { UsersIcon } from "../icons/users-icon";
 export default function PatientDashboard() {
   const [userName, setUserName] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
@@ -106,23 +107,7 @@ export default function PatientDashboard() {
             onClick={() => navigate("/caretaker")}
             className="border border-gray-300 bg-white px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors flex items-center gap-2 shadow-sm"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-users w-4 h-4"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+            <UsersIcon className="w-4 h-4" />
             Switch to Caretaker
           </button>
           <button
@@ -134,7 +119,7 @@ export default function PatientDashboard() {
         </div>
       </header>
 
-      <section className="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-xl p-6 shadow-md">
+      <section className="bg-gradient-to-r from-emerald-500 to-sky-300 text-white rounded-xl p-6 shadow-md">
         <div className="flex items-center gap-4 mb-4">
           <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
             <UserIcon className="w-8 h-8 text-white" />

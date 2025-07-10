@@ -7,8 +7,14 @@ import {
   ChevronDown,
   User,
   LogOutIcon,
+  CheckIcon,
+  BellIcon,
 } from "lucide-react";
 import { CalendarView } from "../components/Calendar";
+import { CalendarIcon } from "../icons/calendar-icon";
+import { AlertIcon } from "../icons/alert-icon";
+import { CameraIcon } from "../icons/camera-icon";
+import { UsersIcon } from "../icons/users-icon";
 
 export default function CaretakerDashboard() {
   const navigate = useNavigate();
@@ -66,26 +72,10 @@ export default function CaretakerDashboard() {
         </div>
       </header>
 
-      <section className="bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl p-6 shadow-md">
+      <section className="bg-gradient-to-r from-emerald-500 to-sky-300 text-white rounded-xl p-6 shadow-md">
         <div className="flex items-center gap-4 mb-6">
           <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-users w-8 h-8"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+            <UsersIcon className="w-8 h-8 text-white" />
           </div>
           <div>
             <h2 className="text-2xl font-bold mb-1">Caretaker Dashboard</h2>
@@ -123,23 +113,7 @@ export default function CaretakerDashboard() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-4 rounded-lg shadow-sm">
               <h3 className="font-semibold text-2xl mb-4 flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-calendar w-5 h-5 text-gray-700"
-                >
-                  <path d="M8 2v4"></path>
-                  <path d="M16 2v4"></path>
-                  <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                  <path d="M3 10h18"></path>
-                </svg>
+                <CalendarIcon className="w-5 h-5 text-gray-700" />
                 Today's Status
               </h3>
               <div className="flex justify-between items-center p-4 rounded-md bg-gray-100">
@@ -254,39 +228,11 @@ export default function CaretakerDashboard() {
                   {" "}
                   {entry.status === "Missed" ? (
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-red-100">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-triangle-alert w-5 h-5 text-red-600"
-                      >
-                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
-                        <path d="M12 9v4"></path>
-                        <path d="M12 17h.01"></path>
-                      </svg>
+                      <AlertIcon className="w-5 h-5 text-red-600" />
                     </div>
                   ) : (
                     <div className="w-10 h-10 rounded-full flex items-center justify-center bg-green-100">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-check w-5 h-5 text-green-600"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
+                      <CheckIcon className="w-6 h-6 text-green-500" />
                     </div>
                   )}
                 </div>
@@ -304,23 +250,9 @@ export default function CaretakerDashboard() {
                 <div className="flex items-center gap-3">
                   {" "}
                   {entry.withPhoto && (
-                    <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground bg-gray-100 text-gray-700">
+                    <div className="inline-flex items-center  gap-2 rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground bg-gray-100 text-gray-700">
                       {" "}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-camera w-3 h-3 mr-1"
-                      >
-                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
-                        <circle cx="12" cy="13" r="3"></circle>
-                      </svg>
+                      <CameraIcon className="w-4 h-4 text-gray-700" />
                       Photo
                     </div>
                   )}
@@ -362,8 +294,7 @@ export default function CaretakerDashboard() {
                     day: "numeric",
                   })
                 : "a selected date"}
-            </h4>
-            \{" "}
+            </h4>{" "}
             {selectedDay?.toDateString() === new Date().toDateString() ? (
               <div className="bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-md text-sm flex items-start gap-3">
                 <span
@@ -399,21 +330,7 @@ export default function CaretakerDashboard() {
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h3 className="font-semibold text-2xl mb-4 flex items-center gap-2">
               {" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-bell w-5 h-5 text-gray-700"
-              >
-                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-              </svg>
+              <BellIcon className="w-6 h-6 text-gray-700" />
               Notification Preferences
             </h3>
 
