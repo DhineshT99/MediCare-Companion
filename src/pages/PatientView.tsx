@@ -9,6 +9,7 @@ import { UserIcon } from "../icons/user-icon";
 import { useNavigate } from "react-router-dom";
 import { UsersIcon } from "../icons/users-icon";
 export default function PatientDashboard() {
+  
   const [userName, setUserName] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
   const [markedTakenDates, setMarkedTakenDates] = useState<string[]>([]);
@@ -147,8 +148,8 @@ export default function PatientDashboard() {
         </div>
       </section>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-100 hover:shadow-xl transition">
+      <div className="flex justify-around">
+        <div className="bg-white rounded-xl w-[65%] gap-2 shadow-lg p-6 border border-blue-100 hover:shadow-xl transition">
           <div className="flex items-center gap-2 mb-4">
             <CalendarDays className="text-blue-600" />
             <h3 className="text-xl font-semibold">
@@ -261,7 +262,7 @@ export default function PatientDashboard() {
           )}
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end ">
           <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-100 hover:shadow-xl transition w-90">
             <h3 className="font-semibold text-xl mb-4">Medication Calendar</h3>
             <CalendarView

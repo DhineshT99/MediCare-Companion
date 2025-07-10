@@ -10,15 +10,20 @@ export default function Login() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit = async (data: any) => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email: data.email,
-      password: data.password,
-    });
+ const onSubmit = async (data: any) => {
+  const { error } = await supabase.auth.signInWithPassword({
+    email: data.email,
+    password: data.password,
+  });
 
-    if (error) toast.error("Login failed: " + error.message);
-    else navigate("/dashboard");
-  };
+  if (error) {
+    toast.error("Login failed: " + error.message);
+  } else {
+    toast.success("Logged In"); // ✅ show success toast
+    navigate("/dashboard");
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-blue-50 flex items-center justify-center">

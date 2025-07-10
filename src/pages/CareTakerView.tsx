@@ -132,14 +132,17 @@ export default function CaretakerDashboard() {
                 <QuickAction
                   icon={<Mail size={16} />}
                   label="Send Reminder Email"
+                  onClick={() => alert("Message has been sent!")}
                 />
                 <QuickAction
                   icon={<Bell size={16} />}
                   label="Configure Notifications"
+                  onClick={() => setActiveTab(3)}
                 />
                 <QuickAction
                   icon={<Calendar size={16} />}
                   label="View Full Calendar"
+                  onClick={() => setActiveTab(2)}
                 />
               </ul>
             </div>
@@ -480,13 +483,18 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
 function QuickAction({
   icon,
   label,
+  onClick,
 }: {
   icon: React.ReactNode;
   label: string;
+  onClick?: () => void;
 }) {
   return (
     <li>
-      <button className="flex items-center gap-2 px-4 py-2 w-full rounded-md transparent text-left hover:bg-gray-50">
+      <button
+        onClick={onClick}
+        className="flex items-center gap-2 px-4 py-2 w-full rounded-md transparent text-left hover:bg-gray-50"
+      >
         {icon}
         {label}
       </button>
