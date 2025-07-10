@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import PatientDashboard from "./pages/PatitentView";
+import PatientDashboard from "./pages/PatientView";
+import CaretakerDashboard from "./pages/CareTakerView";
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/patient" element={<PatientDashboard />} />
-        {/* <Route path="/caretaker" element={<CaretakerDashboard />} /> */} 
+        <Route path="/caretaker" element={<CaretakerDashboard />} /> 
       </Routes>
     </BrowserRouter>
   );

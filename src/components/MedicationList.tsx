@@ -27,7 +27,7 @@ export default function MedicationList() {
       })
       .eq("id", id);
 
-    fetchMeds(); // refresh list
+    fetchMeds();
   };
 
   useEffect(() => {
